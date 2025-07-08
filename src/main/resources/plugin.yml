@@ -1,0 +1,17 @@
+name: TamirKiti
+version: '1.0'
+main: me.xMatti.TamirKiti.TamirKitiMain
+authors: [xMatti]
+description: Gelişmiş ve tamamen ayarlanabilir tamir kiti eklentisi. Ranklara özel bekleme süresi, SQLite ve MySQL desteği ile.
+website: https://github.com/iamxmatti/TamirKiti
+
+commands:
+  tamirkiti:
+    description: Oyuncuya tamir kiti verir.
+    usage: /tamirkiti
+  tamirkitiver:
+    description: Başka bir oyuncuya tamir kiti verir.
+    usage: /tamirkitiver <oyuncu> [miktar]
+  tamirkitireload:
+    description: Eklentiyi yeniden yükler.
+    usage: /tamirkitireload

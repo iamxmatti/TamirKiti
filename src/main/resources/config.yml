@@ -1,0 +1,81 @@
+# Tamir Kiti Eklentisi Ayarları
+
+# Veritabanı yapılandırması
+database:
+  # Kullanılacak veritabanı tipi.
+  # "MYSQL" veya "SQLITE" olarak ayarlayabilirsiniz.
+  type: "SQLITE" # Başlangıçta SQLite olarak ayarlandı, MySQL için "MYSQL" yapın
+
+  # MySQL Veritabanı Ayarları (Eğer database.type: "MYSQL" ise kullanılır)
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "tamir_kiti_db" # Kullanacağınız veritabanı adı
+    user: "root" # MySQL kullanıcı adınız
+    password: "your_mysql_password" # MySQL şifreniz
+
+# /tamirkiti komutu için ranklara göre bekleme süreleri (saniye cinsinden)
+# Örnek: 'vip' rankı için 1 gün = 24 * 60 * 60 = 86400 saniye
+# Rank isimleri küçük harfle yazılmalı ve izin sistemiyle (örn: tamirkiti.rank.vip) eşleşmelidir.
+# Oyuncunun birden fazla rank izni varsa, en düşük bekleme süresi uygulanır.
+cooldowns:
+  default: 604800  # 7 gün (hiçbir özel rank izni yoksa)
+  vip: 432000      # 5 gün (izin: tamirkiti.rank.vip)
+  premium: 259200  # 3 gün (izin: tamirkiti.rank.premium)
+  # Buraya başka ranklar ekleyebilirsiniz:
+  # ornekrank: 86400 # 1 gün (izin: tamirkiti.rank.ornekrank)
+
+# Tamir Kiti Eşyası Ayarları
+repair_kit:
+  # Eşyanın türü. Buraya geçerli bir Spigot Materyal adı yazmalısın.
+  # Örnekler: PAPER, EMERALD, NETHER_STAR, DIAMOND
+  material: 'PAPER'
+  # Kitin oyun içinde görünecek adı. Renk kodları (&) kullanabilirsiniz.
+  name: "&b&lTamir Kiti"
+  # Kitin açıklaması. Her satır bir tire (-) ile başlamalıdır.
+  lore:
+    - "&7Bu özel kit ile ekipmanlarını"
+    - "&7anında tamir et!"
+    - ""
+    - "&eKullanmak için envanterinde"
+    - "&esürükleyerek eşyanın üzerine bırak."
+  # Eşyaya parlama efekti ekler (enchantment ile)
+  glow: true
+
+# Çalacak ses efektleri
+sounds:
+  success:
+    # Tamir işlemi başarılı olduğunda çalacak sesin adı.
+    # 1.8 Ses isimleri için şu listeye bakabilirsin: https://helpch.at/docs/1.8.8/index.html?org/bukkit/Sound.html (Legacy Names)
+    # Popüler Örnekler: ANVIL_USE, ORB_PICKUP, LEVEL_UP, NOTE_PLING
+    name: 'ANVIL_USE'
+    # Sesin yüksekliği (Genellikle 1.0 kullanılır)
+    volume: 1.0
+    # Sesin tonu/inceliği (1.0 normal, daha yüksekse daha ince ses çıkar)
+    pitch: 1.0
+  failure:
+    # Tamir işlemi başarısız olduğunda çalacak sesin adı.
+    # Popüler Örnekler: NOTE_BASS, ITEM_BREAK, VILLAGER_NO
+    name: 'VILLAGER_NO'
+    volume: 1.0
+    pitch: 1.0
+
+# Oyunculara ve konsola gönderilecek tüm mesajlar
+messages:
+  prefix: "&8[&bTamirKiti&8] &r"
+  kit_received: "&aBaşarıyla bir tamir kiti aldın!"
+  cooldown_active: "&cBu komutu tekrar kullanabilmek için &e%time% &cbeklemelisin."
+  no_permission_command: "&cBu komutu kullanma iznin yok."
+  must_be_player: "&cBu komut sadece oyuncular tarafından kullanılabilir."
+  item_repaired: "&aEşyan başarıyla tamir edildi!"
+  item_not_repairable: "&cBu tür bir eşya tamir edilemez."
+  item_already_repaired: "&eBu eşya zaten tamir edilmiş durumda."
+  cannot_place_kit: "&cBu özel tamir kitini bir blok olarak yere koyamazsın!"
+  cannot_rename_kit: "&cTamir kitinin ismini bir örste değiştiremezsin!"
+  reload_success: "&aTamirKiti ayarları başarıyla yeniden yüklendi."
+  reload_fail: "&cTamirKiti ayarları yüklenirken bir hata oluştu: %error%"
+  player_not_online: "&cBelirtilen oyuncu çevrimiçi değil."
+  kit_given_to_player: "&a%player% adlı oyuncuya %amount% adet tamir kiti verdin."
+  kit_received_from_admin: "&aBir yetkili tarafından sana %amount% adet tamir kiti verildi."
+  invalid_usage_give: "&cKullanım: /tamirkitiver <oyuncu> [miktar]"
+  not_a_number: "&cMiktar geçerli bir sayı olmalı."
