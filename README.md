@@ -33,10 +33,6 @@ Bu işlemi yaptığınızda üç farklı sonuçla karşılaşabilirsiniz:
 -   **Ayarlanabilir Sesler ve Mesajlar:** Başarılı ve başarısız tamir işlemleri için ses efektleri ve tüm oyuncu mesajları `config.yml` üzerinden düzenlenebilir.
 -   **Yüksek Performans:** Eklenti, veritabanı işlemlerini arka planda (asenkron) yapar ve verileri hafızada önbelleğe alarak sunucu performansını (TPS) etkilemez.
 
-## ❗ Gereksinimler
-
--   Bu eklentinin çalışabilmesi için sunucunuzda **SQLite veya MySQL JDBC sürücülerinden birini sağlayan bir başka eklentinin yüklü olması yada kütüphanesi yeterlidir.** Eğer harici bir veritabanı kullanmıyorsanız (örn: SQLite), bu sürücüyü sağlayan herhangi bir eklentiye ihtiyaç duymazsınız.
-
 ## ⚙️ Kurulum (Sunucu Sahipleri İçin)
 
 1.  GitHub sayfasının sağ tarafındaki **"Releases"** bölümüne gidin.
