@@ -25,7 +25,7 @@ Bu işlemi yaptığınızda üç farklı sonuçla karşılaşabilirsiniz:
 
 -   **Ayarlanabilir Tamir Kiti:** Kitin hangi eşya olacağını (`material`), adını, açıklamasını ve parlama efektini `config.yml` üzerinden tamamen değiştirebilirsiniz.
 -   **Yetkiye Dayalı Bekleme Süreleri:** Farklı oyuncu gruplarına (rank'lara) farklı bekleme süreleri atayabilirsiniz. (`/tamirkiti`)
--   **Esnek Veritabanı Desteği:** Oyuncu verileri, sunucuda yüklü olan ve JDBC sürücüsü sağlayan diğer eklentiler veya kütüphane aracılığıyla SQLite veya MySQL gibi veritabanlarında saklanabilir. Veri kaybını önlemek için sağlam bir yapı sunar.
+-   **Esnek Veritabanı Desteği:** Oyuncu verileri, SQLite veya MySQL gibi veritabanlarında saklanabilir. Veri kaybını önlemek için sağlam bir yapı sunar.
 -   **Admin Komutları:** Oyunculara kit vermek (`/tamirkitiver`) ve eklentiyi yeniden yüklemek (`/tamirkitireload`) için özel komutlar.
 -   **Özel İzinler:** Belirli oyunculara bekleme süresini atlama (`bypass`) izni verebilirsiniz.
 -   **Kötüye Kullanım Koruması:** Tamir kitlerinin bir blok olarak yere konulması veya örste isminin değiştirilmesi engellenmiştir.
